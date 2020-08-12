@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ombrocotovelo-recife": {
+      "hosting": {
+        "ombrocotovelo": [
+          "ombrocotovelo-recife"
+        ]
+      }
+    }
+  }
+}
