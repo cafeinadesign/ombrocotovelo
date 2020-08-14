@@ -18,6 +18,9 @@ div#atendimento {
     .mat-stepper-vertical {
       background-color: transparent;
     }
+    img#logo {
+      height: 96px;
+    }
   }
 }
 
@@ -26,7 +29,6 @@ div#atendimento {
   */
 @media (max-width: 768px) {
   div#atendimento {
-    display: block;
     min-height: auto;
     padding: 0;
     mat-card {
@@ -35,6 +37,9 @@ div#atendimento {
       width: 100%;
       border-radius: 0;
       box-shadow: none;
+      img#logo {
+        height: 64px;
+      }
       h1 {
         color: #383b3f;
         padding-top: 30px;

@@ -1,12 +1,13 @@
 <div id="atendimento">
   <mat-card>
-    <img
-      id="logo"
-      src="https://www.ombrocotovelo.com/img/rinaldo-lucena.svg"
-      alt="Dr. Rinaldo Lucecna"
-      height="96"
-    />
-    <p><small>CRM: 11.112</small></p>
+    <div style="text-align: center;">
+      <img
+        id="logo"
+        src="https://www.ombrocotovelo.com/img/rinaldo-lucena.svg"
+        alt="Dr. Rinaldo Lucecna"
+      />
+      <p><small>CRM: 11.112</small></p>
+    </div>
     <h1 class="display-4" style="margin-bottom: 5px;">
       Marque sua consulta remota
     </h1>
@@ -139,7 +140,7 @@
           </div>
           <div>
             <h1 class="mat-headline">Endereço</h1>
-            <h2 class="mat-title">
+            <h2 class="mat-title" style="color: #e91e63;">
               {{
                 address?.street
                   ? address.street +
@@ -163,7 +164,7 @@
                 type="tel"
                 matInput
                 placeholder="Digite seu CEP"
-                formControlName="cepCtrl"
+                formControlName="cep"
                 required
                 (ngModelChange)="buscaCEP($event)"
                 mask="99999-999"
@@ -216,7 +217,7 @@
           <p class="mat-body-2" style="color: #e91e63; font-weight: 700;">
             Enviamos para seu e-mail um link com sala para a consulta on-line.
           </p>
-          <div style="margin: 30px auto 0; width: 33%;">
+          <div style="margin: 0 auto 0; width: 33%;">
             <ng-lottie
               [options]="sucesso"
               (animationCreated)="animationCreated($event)"
@@ -228,8 +229,9 @@
             color="primary"
             matStepperNext
             style="width: 260px;"
+            (click)="fechar()"
           >
-            Ver minha consulta
+            Fechar
           </button>
         </div>
         <div style="margin: 30px auto 0; width: 33%;" [hidden]="!carregando">

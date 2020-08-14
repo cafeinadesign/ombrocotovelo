@@ -53,26 +53,25 @@ export class AppComponent implements OnInit {
       hora: ['', Validators.required],
     });
     this.cardForm = this.formBuilder.group({
-      card_holder_name: ['', Validators.required],
-      card_expiration_date: ['', Validators.required],
-      card_number: ['', Validators.required],
-      card_cvv: ['', Validators.required],
+      card_holder_name: ['THIAGO', Validators.required],
+      card_expiration_date: ['12/22', Validators.required],
+      card_number: ['4111111111111111', Validators.required],
+      card_cvv: ['123', Validators.required],
       installments: ['1', Validators.required],
     });
     this.customerForm = this.formBuilder.group({
-      name: ['', Validators.required],
-      email: ['', Validators.required],
-      cpf: ['', Validators.required],
-      birthday: [''],
-      phone_number: ['', Validators.required],
-      cepCtrl: ['', Validators.required],
-      street_number: ['', Validators.required],
+      name: ['Thiago Prazeres Bezerra', Validators.required],
+      email: ['thiagoprazeres@gmail.com', Validators.required],
+      cpf: ['06215350443', Validators.required],
+      birthday: ['16/02/1986'],
+      phone_number: ['81997070825', Validators.required],
+      cep: ['', Validators.required],
+      street_number: ['55', Validators.required],
       complementary: [''],
     });
   }
   animationCreated(animationItem: AnimationItem): void {
     this.animationItem = animationItem;
-    this.animationItem.play();
   }
 
   onSubmit(cardData): any {
@@ -113,7 +112,9 @@ export class AppComponent implements OnInit {
         .connect({ encryption_key: environment.pagarme.encryptionKey })
         .then((client) => client.security.encrypt(cardData))
         .then((CARD_HASH) => {
-          console.log('birthday', this.customerForm.value.birthday);
+          let birthday = this.customerForm.value.birthday.split('/');
+          birthday = birthday.reverse().join('-');
+          console.log('birthday: ', birthday);
           this.http
             .post(environment.pagarme.url + '/pagar', {
               CARD_HASH,
@@ -132,7 +133,7 @@ export class AppComponent implements OnInit {
                   '+55' +
                     this.customerForm.value.phone_number.replace(/\D/g, ''),
                 ],
-                birthday: this.customerForm.value.birthday,
+                birthday,
               },
               billing: {
                 address: {
@@ -257,5 +258,8 @@ export class AppComponent implements OnInit {
         this.valorTotal = 20000;
         break;
     }
+  }
+  fechar(): void {
+    window.close();
   }
 }

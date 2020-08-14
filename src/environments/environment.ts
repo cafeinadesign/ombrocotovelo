@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   pagarme: {
-    encryptionKey: 'ek_test_OSxEIhfFAQqcqaewfXUr9p9bNpQffG',
-    url: 'http://localhost:5001/cleydson-sobral/us-central1',
+    encryptionKey: 'ek_test_gIgPqyXrRGheL4CmqwrXrnyCt29dN1',
+    url: 'https://us-central1-ombrocotovelo-recife.cloudfunctions.net/',
   },
 };
 

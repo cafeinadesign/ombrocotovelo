@@ -24,6 +24,8 @@
     "@angular/router": "~10.0.6",
     "@angular/service-worker": "~10.0.6",
     "firebase": "^7.13.1",
+    "firebase-admin": "^9.1.0",
+    "firebase-functions": "^3.9.1",
     "lottie-web": "^5.7.1",
     "ngx-lottie": "^6.3.0",
     "ngx-mask": "^10.0.1",
