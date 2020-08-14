@@ -12,10 +12,44 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
+/* For use in src/lib/core/theming/_palette.scss */
+$md-mcgpalette0: (
+  50: #e0e0ed,
+  100: #b3b3d1,
+  200: #8080b3,
+  300: #4d4d94,
+  400: #26267d,
+  500: #000066,
+  600: #00005e,
+  700: #000053,
+  800: #000049,
+  900: #000038,
+  A100: #6e6eff,
+  A200: #3b3bff,
+  A400: #0808ff,
+  A700: #0000ee,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #ffffff,
+  ),
+);
+
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$ombrocotovelo-primary: mat-palette($mat-indigo);
-$ombrocotovelo-accent: mat-palette($mat-pink, A200, A100, A400);
+// hue. Available color palettes: https://material.io/design/color/ #4d4d4dff
+$ombrocotovelo-primary: mat-palette($md-mcgpalette0);
+$ombrocotovelo-accent: mat-palette($mat-pink);
 
 // The warn palette is optional (defaults to red).
 $ombrocotovelo-warn: mat-palette($mat-red);
@@ -37,9 +71,6 @@ $ombrocotovelo-theme: mat-light-theme(
 // that you are using.
 @include angular-material-theme($ombrocotovelo-theme);
 
-/* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700&display=swap");
-
 html,
 body {
   height: 100%;
@@ -47,6 +78,7 @@ body {
 body {
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  background-color: whitesmoke;
 }
 h1,
 h2,

@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  pagarme: {
+    encryptionKey: 'ek_test_OSxEIhfFAQqcqaewfXUr9p9bNpQffG',
+    url: 'http://localhost:5001/cleydson-sobral/us-central1',
+  },
 };
 
 /*

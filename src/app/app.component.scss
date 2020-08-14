@@ -1,0 +1,47 @@
+div#atendimento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  mat-card {
+    color: #4d4d4d;
+    padding: 48px 40px 36px;
+    width: 100%;
+    max-width: 768px;
+    background-position: right bottom;
+    background-image: url("https://www.ombrocotovelo.com/img/rinaldo-lucena.png");
+    background-size: auto 256px;
+    background-repeat: no-repeat;
+    .mat-stepper-horizontal,
+    .mat-stepper-vertical {
+      background-color: transparent;
+    }
+  }
+}
+
+/**
+  * Rules for when the device is detected to be a small screen.
+  */
+@media (max-width: 768px) {
+  div#atendimento {
+    display: block;
+    min-height: auto;
+    padding: 0;
+    mat-card {
+      display: block;
+      padding: 48px 24px 36px;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+      h1 {
+        color: #383b3f;
+        padding-top: 30px;
+      }
+      #cardForm {
+        background-image: none;
+      }
+    }
+  }
+}
